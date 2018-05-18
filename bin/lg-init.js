@@ -5,9 +5,10 @@ const path = require('path')
 const fs = require('fs')
 const glob = require('glob')
 const inquirer = require('inquirer')
-const latestVersion = require('latest-version')
+const rm = require('rimraf').sync
 
 const download = require('../lib/download')
+const generator = require('../lib/generator')
 
 program.usage('<project-name>').parse(process.argv)
 
@@ -60,7 +61,6 @@ function go() {
     return download(projectRoot).then(target => {
       return {
         name: projectRoot,
-        root: projectRoot,
         downloadTemp: target
       }
     })
@@ -69,7 +69,7 @@ function go() {
       {
         name: 'projectName',
         message: '项目的名称',
-        default: context.name
+        default: projectName
       }, {
         name: 'projectVersion',
         message: '项目的版本号',
@@ -77,7 +77,7 @@ function go() {
       }, {
         name: 'projectDescription',
         message: '项目的简介',
-        default: `A project named ${context.name}`
+        default: `A normal project`
       }
     ]).then(answers => {
       return {
@@ -88,8 +88,10 @@ function go() {
       }
     })
   }).then(context => {
-    console.log(context)
+    return generator(context.metadata, context.downloadTemp, context.name)
+  }).then(context => {
+    console.log('创建成功:)')
   }).catch(err => {
-    console.error(err)
+    console.log(`创建失败：${err}`)
   })
 }
