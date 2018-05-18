@@ -1,0 +1,16 @@
+{
+  "name": "lg-cli",
+  "version": "1.0.0",
+  "description": "my cli",
+  "bin": {
+    "macaw": "./bin/lg.js"
+  },
+  "devDependencies": {
+    "commander": "^2.15.1",
+    "download-git-repo": "^1.0.2",
+    "glob": "^7.1.2",
+    "inquirer": "^5.2.0",
+    "latest-version": "^3.1.0",
+    "ora": "^2.1.0"
+  }
+}
