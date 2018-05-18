@@ -5,7 +5,8 @@ const path = require('path')
 const fs = require('fs')
 const glob = require('glob')
 const inquirer = require('inquirer')
-const rm = require('rimraf').sync
+const chalk = require('chalk')
+const logSymbols = require('log-symbols')
 
 const download = require('../lib/download')
 const generator = require('../lib/generator')
@@ -61,6 +62,7 @@ function go() {
     return download(projectRoot).then(target => {
       return {
         name: projectRoot,
+        root: projectRoot,
         downloadTemp: target
       }
     })
@@ -88,10 +90,13 @@ function go() {
       }
     })
   }).then(context => {
-    return generator(context.metadata, context.downloadTemp, context.name)
-  }).then(context => {
-    console.log('创建成功:)')
+    generator(context.metadata, context.downloadTemp, context.name).then(() => {
+      console.log(logSymbols.success, chalk.magenta('创建成功:)'))
+      console.log()
+      console.log(chalk.magenta('  cd ' + context.root + '\n  open index.html'))
+      console.log()
+    })
   }).catch(err => {
-    console.log(`创建失败：${err}`)
+    console.log(logSymbols.error, chalk.red(`创建失败：${err}`))
   })
 }
