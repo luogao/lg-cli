@@ -1,5 +1,12 @@
 const program = require('commander')
-program.version('1.0.0')
-	.usage('<command> [项目名称]')
-	.command('init', '创建新项目')
-	.parse(process.argv)
+program
+	.version(require('../package').version)
+	.usage('<command> [options]')
+
+program
+	.command('init <app-name>')
+	.description('create a new project powered by lg-cli')
+	.action((name, cmd) => {
+		console.log(name. cmd)
+		// require('../lib/init')(name)
+	})
