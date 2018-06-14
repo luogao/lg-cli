@@ -20,6 +20,16 @@ program
     require('../lib/test')(name, cmd)
   })
 
+program
+  .command('gitsearch <keywords>')
+  .option('-o, --owner [name]', 'Filter by the repositories owner')
+  .option('-l, --language [language]', 'Filter by the repositories language')
+  .option('-f, --full', 'Full output without any styling')
+  .action((keywords, cmd) => {
+    require('../lib/gitSearch')(keywords, cmd)
+  })
+
+
 program.parse(process.argv)
 
 if (!process.argv.slice(2).length) {
