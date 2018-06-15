@@ -29,6 +29,12 @@ program
     require('../lib/gitSearch')(keywords, cmd)
   })
 
+program
+  .command('upload')
+  .action(() => {
+    require('../lib/upload')()
+  })
+
 
 program.parse(process.argv)
 
