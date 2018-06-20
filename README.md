@@ -20,3 +20,7 @@ lg，属于自己的项目脚手架，自己的命令行工具。
 [Node.js 命令行程序开发教程](http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html)
 
 [用Node.js创建命令行工具](http://www.html-js.com/article/A-day-to-learn-JavaScript-create-commandline-tools-with-Nodejs)
+
+[node-cross-spawn](https://github.com/moxystudio/node-cross-spawn)
+
+[hexo deploy](https://github.com/hexojs/hexo-util/blob/master/lib/spawn.js)
