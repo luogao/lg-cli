@@ -24,3 +24,5 @@ lg，属于自己的项目脚手架，自己的命令行工具。
 [node-cross-spawn](https://github.com/moxystudio/node-cross-spawn)
 
 [hexo deploy](https://github.com/hexojs/hexo-util/blob/master/lib/spawn.js)
+
+[rsync](http://man.linuxde.net/rsync)

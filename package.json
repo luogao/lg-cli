@@ -17,6 +17,7 @@
     "request": "^2.87.0"
   },
   "dependencies": {
+    "cross-spawn": "^6.0.5",
     "ssh2-sftp-client": "^2.2.0"
   }
 }
