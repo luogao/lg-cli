@@ -3,6 +3,29 @@ lg，属于自己的项目脚手架，自己的命令行工具。
 
 2018-06-14 将[lg-upload-helper](https://github.com/luogao/lg-upload-helper)合并到此项目下开发，目前仍为学习测试阶段。
 
+## Usage
+
+Setup your config file named `lgconfig.json`
+``` json
+{
+  "host": "your host address",
+  "port": "your port",
+  "username": "user name",
+  "remote": "your remote file dir"
+}
+
+```
+
+```
+$ lg upload
+```
+
+
+## log
+
+- 2018-06-23 利用rsync将配置文件中的指定的文件地址中的文件上传至指定的远程主机
+
+
 ## TODO 
 - 将之前的项目重新编写规划，完成一个简单的init命令
 - 将lg-upload-helper移植到这个项目中，将其集成在lg命令行工具中，并完成其开发。
