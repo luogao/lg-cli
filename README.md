@@ -11,10 +11,13 @@ Setup your config file named `lgconfig.json`
   "host": "your host address",
   "port": "your port",
   "username": "user name",
-  "remote": "your remote file dir"
+  "remote": "your remote file dir",
+  "local": "your local file dir which need to be uploaded"
 }
 
 ```
+
+then
 
 ```
 $ lg upload
