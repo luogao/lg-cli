@@ -12,6 +12,13 @@ program
   })
 
 program
+  .command('template')
+  .description('show all available template')
+  .action(() => {
+    require('../lib/templateList')()
+  })
+
+program
   .command('test <app-name>')
   .description('this is a test')
   .option('-p, --preset <presetName>', 'Skip prompts and use saved or remote preset')
